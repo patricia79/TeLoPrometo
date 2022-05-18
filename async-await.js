@@ -1,4 +1,4 @@
-let empleados = [
+let employees = [
     { id: 1, nombre: 'Carlos' },
     { id: 2, nombre: 'Andrés' },
     { id: 3, nombre: 'Juan' }
