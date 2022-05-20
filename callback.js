@@ -8,49 +8,49 @@ por su ID:
 - Juan no posee información de salario en el momento.
 **/
 let employees = [
-    { id: 1, nombre: 'Carlos' },
-    { id: 2, nombre: 'Andrés' },
-    { id: 3, nombre: 'Juan' }
+    { id: 1, name: 'Carlos' },
+    { id: 2, name: 'Andrés' },
+    { id: 3, name: 'Juan' }
 ]
 
-let salarios = [
-    { id: 1, salario: 2000 },
-    { id: 2, salario: 3000 }
+let salaries = [
+    { id: 1, salary: 2000 },
+    { id: 2, salary: 3000 }
 ];
 
 /**
-- Retorna el empleado por ID
+- Retorna el employee por ID
 - @param {} id
 - @param {} callback
 **/
-let getEmpleado = (id, callback) => {
+let getEmployee= (id, callback) => {
 
     // Buscamos el empleado por su id
-    let empleadoDB = empleados.find(empleado => empleado.id === id);
-    if (!empleadoDB) {
-        // Si el empleado no existe, entonces el primer argumento de
+    let employee_db = employees.find(employee => employee.id === id);
+    if (!employee_db) {
+        // Si el employee no existe, entonces el primer argumento de
         // callback será un mensaje de error, y como segundo parametro
-        // no tendrá nada, pues no se encontró el empleado
-        callback(`El empleado con ID ${id} no existe en la base de datos`);
+        // no tendrá nada, pues no se encontró el employee
+        callback(`El employee con ID ${id} no existe en la base de datos`);
     }
     else {
         // No hay error (null como primer parametro), como segundo
         // parametro mandamos el empleado encontrado, este lo
         // obtendremos despues cuando llamemos a la funcion
-        // getEmpleado, sigue leyendo..
-        callback(null, empleadoDB);
+        // getEmployee, sigue leyendo..
+        callback(null, employee_db);
     }
 
 }
 
 /**
-- Retorna la informacion del salario de un empleado
-- @param {\*} empleado
+- Retorna la informacion del salary de un employee
+- @param {\*} employee
 - @param {_} callback
 **/
-let getSalario = (empleado, callback) => {
-    // Buscamos el salario segun el id del empleado
-    let salarioDB = salarios.find(salario => empleado.id === salario.id);
+let getSalario = (employee, callback) => {
+    // Buscamos el salary segun el id del empleado
+    let salarioDB = salarios.find(salary => empleado.id === salario.id);
     if (!salarioDB) {
         callback(`No se encontró un salario para el empleado ${empleado.nombre.toUpperCase()}`);
     }
